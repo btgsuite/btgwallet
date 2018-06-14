@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/roasbeef/btcd/chaincfg"
-	"github.com/roasbeef/btcwallet/internal/prompt"
+	"github.com/shelvenzhou/btgwallet/internal/prompt"
 	"github.com/roasbeef/btcwallet/waddrmgr"
 	"github.com/roasbeef/btcwallet/walletdb"
 )

@@ -8,7 +8,7 @@ import (
 	"github.com/roasbeef/btcd/blockchain"
 	"github.com/roasbeef/btcd/wire"
 
-	h "github.com/roasbeef/btcwallet/internal/helpers"
+	h "github.com/shelvenzhou/btgwallet/internal/helpers"
 )
 
 // Worst case script and input/output size estimates.
