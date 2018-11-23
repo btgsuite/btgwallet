@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/btcsuite/btcd/wire"
+	"github.com/btgsuite/btgd/wire"
 	. "github.com/btcsuite/btcwallet/wallet/internal/txsizes"
 )
 

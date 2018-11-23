@@ -12,12 +12,12 @@ import (
 
 	"golang.org/x/crypto/ssh/terminal"
 
-	"github.com/btcsuite/btcd/btcjson"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/rpcclient"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil"
+	"github.com/btgsuite/btgd/btcjson"
+	"github.com/btgsuite/btgd/chaincfg/chainhash"
+	"github.com/btgsuite/btgd/rpcclient"
+	"github.com/btgsuite/btgd/txscript"
+	"github.com/btgsuite/btgd/wire"
+	"github.com/btgsuite/btgutil"
 	"github.com/btcsuite/btcwallet/internal/cfgutil"
 	"github.com/btcsuite/btcwallet/netparams"
 	"github.com/btcsuite/btcwallet/wallet/txauthor"

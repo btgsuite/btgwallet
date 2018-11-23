@@ -5,8 +5,8 @@
 package votingpool
 
 import (
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil/hdkeychain"
+	"github.com/btgsuite/btgd/wire"
+	"github.com/btgsuite/btgutil/hdkeychain"
 	"github.com/btcsuite/btcwallet/waddrmgr"
 	"github.com/btcsuite/btcwallet/walletdb"
 )

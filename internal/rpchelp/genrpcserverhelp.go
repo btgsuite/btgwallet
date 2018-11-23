@@ -12,7 +12,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/btcsuite/btcd/btcjson"
+	"github.com/btgsuite/btgd/btcjson"
 	"github.com/btcsuite/btcwallet/internal/rpchelp"
 )
 

@@ -25,12 +25,6 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/rpcclient"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil"
-	"github.com/btcsuite/btcutil/hdkeychain"
 	"github.com/btcsuite/btcwallet/chain"
 	"github.com/btcsuite/btcwallet/internal/cfgutil"
 	"github.com/btcsuite/btcwallet/internal/zero"
@@ -39,6 +33,12 @@ import (
 	"github.com/btcsuite/btcwallet/waddrmgr"
 	"github.com/btcsuite/btcwallet/wallet"
 	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgd/chaincfg/chainhash"
+	"github.com/btgsuite/btgd/rpcclient"
+	"github.com/btgsuite/btgd/txscript"
+	"github.com/btgsuite/btgd/wire"
+	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgutil/hdkeychain"
 )
 
 // Public API version constants

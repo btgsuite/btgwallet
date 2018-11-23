@@ -10,14 +10,14 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil"
-	"github.com/btcsuite/btcutil/hdkeychain"
 	"github.com/btcsuite/btcwallet/waddrmgr"
 	"github.com/btcsuite/btcwallet/walletdb"
 	"github.com/btcsuite/btcwallet/wtxmgr"
+	"github.com/btgsuite/btgd/chaincfg"
+	"github.com/btgsuite/btgd/txscript"
+	"github.com/btgsuite/btgd/wire"
+	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgutil/hdkeychain"
 )
 
 // TestOutputSplittingNotEnoughInputs checks that an output will get split if we
