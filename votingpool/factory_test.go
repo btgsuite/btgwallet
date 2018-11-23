@@ -27,15 +27,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcutil"
-	"github.com/btcsuite/btcutil/hdkeychain"
-	"github.com/btcsuite/btcwallet/waddrmgr"
-	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/btcsuite/btcwallet/wtxmgr"
+	"github.com/btgsuite/btgd/chaincfg"
+	"github.com/btgsuite/btgd/chaincfg/chainhash"
+	"github.com/btgsuite/btgd/txscript"
+	"github.com/btgsuite/btgd/wire"
+	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgutil/hdkeychain"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/walletdb"
+	"github.com/btgsuite/btgwallet/wtxmgr"
 )
 
 var (
@@ -62,7 +62,7 @@ func createWithdrawalTx(t *testing.T, dbtx walletdb.ReadWriteTx, pool *Pool, inp
 	}
 	for i, amount := range outputAmounts {
 		request := TstNewOutputRequest(
-			t, uint32(i), "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6", btcutil.Amount(amount), net)
+			t, uint32(i), "AJjMUNbWUBG2tF54ZFkQxHoXw6cxMSDUZq", btcutil.Amount(amount), net)
 		tx.addOutput(request)
 	}
 	return tx
@@ -450,8 +450,8 @@ func createAndFulfillWithdrawalRequests(t *testing.T, dbtx walletdb.ReadWriteTx,
 	params := pool.Manager().ChainParams()
 	seriesID, eligible := TstCreateCreditsOnNewSeries(t, dbtx, pool, []int64{2e6, 4e6})
 	requests := []OutputRequest{
-		TstNewOutputRequest(t, 1, "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6", 3e6, params),
-		TstNewOutputRequest(t, 2, "3PbExiaztsSYgh6zeMswC49hLUwhTQ86XG", 2e6, params),
+		TstNewOutputRequest(t, 1, "AJjMUNbWUBG2tF54ZFkQxHoXw6cxMSDUZq", 3e6, params),
+		TstNewOutputRequest(t, 2, "Adg6gfxBg7nKQVcZ5usfvK3rfZagDGotzw", 2e6, params),
 	}
 	changeStart := TstNewChangeAddress(t, pool, seriesID, 0)
 	dustThreshold := btcutil.Amount(1e4)

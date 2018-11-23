@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcwallet/walletdb"
-	_ "github.com/btcsuite/btcwallet/walletdb/bdb"
+	"github.com/btgsuite/btgd/chaincfg"
+	"github.com/btgsuite/btgwallet/walletdb"
+	_ "github.com/btgsuite/btgwallet/walletdb/bdb"
 )
 
 var (
@@ -46,7 +46,7 @@ var (
 	// seed.
 	expectedAddrs = []expectedAddr{
 		{
-			address:     "14wtcepMNiEazuN7YosWY8bwD9tcCtxXRB",
+			address:     "GMnp2n9JMZqt5NfQUkXcxtwq8KgTFJs1QZ",
 			addressHash: hexToBytes("2b49ecd0cf72006173e6e95acf416b6735b5f889"),
 			internal:    false,
 			compressed:  true,
@@ -61,7 +61,7 @@ var (
 			},
 		},
 		{
-			address:     "1N3D8jy2aQuUsKBsDgZ6ZPTVR9VhHgJYpE",
+			address:     "Get8YsHyZGWmwnVA9dDCz9oPLKHYKEeymx",
 			addressHash: hexToBytes("e6c59a1542138d1bf08f45cd18899557cf56b356"),
 			internal:    false,
 			compressed:  true,
@@ -76,7 +76,7 @@ var (
 			},
 		},
 		{
-			address:     "1VTfwD4iHre2bMrR9qGiJMwoiZGQZ8e6s",
+			address:     "GJLP64Y1h9Tw74f9M6VP94hqitM7SZP8vT",
 			addressHash: hexToBytes("0561e9373986965b647a57a09718e9c050215cfe"),
 			internal:    false,
 			compressed:  true,
@@ -91,7 +91,7 @@ var (
 			},
 		},
 		{
-			address:     "13TdEj4ehUuYFiSaB47eLVBwM2XhAhrK2J",
+			address:     "GLJYerPbgLWqLBjs6zmkmFXqGCKY8YBTyA",
 			addressHash: hexToBytes("1af950be02584ca230b7078cec0cfd38dd71b468"),
 			internal:    false,
 			compressed:  true,
@@ -106,7 +106,7 @@ var (
 			},
 		},
 		{
-			address:     "1LTjSghkBecT59VjEKke331HxVdqcFwUDa",
+			address:     "GdJerp2hAWDk9co2AGQkToMBsfRgaCVxaK",
 			addressHash: hexToBytes("d578a267a7174c6ba7f76b0ab2397ce0ba0c5c3c"),
 			internal:    false,
 			compressed:  true,
@@ -121,7 +121,7 @@ var (
 			},
 		},
 		{
-			address:     "15HNivzKhsLaMs1qRdQN1ifoJYUnJ2xW9z",
+			address:     "GN8J94KGgiwsSLK8Ma4USV1hDiGdJFm2o4",
 			addressHash: hexToBytes("2ef94abb9ee8f785d087c3ec8d6ee467e92d0d0a"),
 			internal:    true,
 			compressed:  true,
@@ -136,7 +136,7 @@ var (
 			},
 		},
 		{
-			address:     "1LJpGrAP1vWHuvfHqmUutQqFVYca2qwxhy",
+			address:     "Gd9jgyVKzn7azPxami92KBB9QiQQyKvf1m",
 			addressHash: hexToBytes("d3c8ec46891f599bfeaa4c25918bfb3d46ea334c"),
 			internal:    true,
 			compressed:  true,
@@ -151,7 +151,7 @@ var (
 			},
 		},
 		{
-			address:     "13NhXy2nCLMwNug1TZ6uwaWnxp3uTqdDQq",
+			address:     "GLDcx6MjBByETNyJPVm2NLrgsyqkPjipMP",
 			addressHash: hexToBytes("1a0ad2a04fde3b2afe068057591e1871c289c4b8"),
 			internal:    true,
 			compressed:  true,
@@ -166,7 +166,7 @@ var (
 			},
 		},
 		{
-			address:     "1AY6yAHvojvpFcevAichLMnJfxgE8eSe4N",
+			address:     "GTP2PHcsnbY7L5xD6fGom88Cb8U5AFwbLS",
 			addressHash: hexToBytes("689b0249c628265215fd1de6142d5d5594eb8dc2"),
 			internal:    true,
 			compressed:  true,
@@ -181,7 +181,7 @@ var (
 			},
 		},
 		{
-			address:     "1Jc7An3JqjzRQULVr6Wh3iYR7miB6WPJCD",
+			address:     "GbT2auNFpbbiUwdnn3AoUUtK2wW2C9sDNi",
 			addressHash: hexToBytes("c11dd8a3577978807a0453febedee2994a6144d4"),
 			internal:    true,
 			compressed:  true,

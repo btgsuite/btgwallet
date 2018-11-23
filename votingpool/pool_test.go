@@ -11,11 +11,11 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/btcsuite/btcutil/hdkeychain"
-	vp "github.com/btcsuite/btcwallet/votingpool"
-	"github.com/btcsuite/btcwallet/waddrmgr"
-	"github.com/btcsuite/btcwallet/walletdb"
-	_ "github.com/btcsuite/btcwallet/walletdb/bdb"
+	"github.com/btgsuite/btgutil/hdkeychain"
+	vp "github.com/btgsuite/btgwallet/votingpool"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/walletdb"
+	_ "github.com/btgsuite/btgwallet/walletdb/bdb"
 )
 
 func TestLoadPoolAndDepositScript(t *testing.T) {
@@ -159,10 +159,10 @@ func TestDepositScriptAddress(t *testing.T) {
 			reqSigs: 2,
 			pubKeys: vp.TstPubKeys[0:3],
 			addresses: map[uint32]string{
-				0: "3Hb4xcebcKg4DiETJfwjh8sF4uDw9rqtVC",
-				1: "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6",
-				2: "3Qt1EaKRD9g9FeL2DGkLLswhK1AKmmXFSe",
-				3: "3PbExiaztsSYgh6zeMswC49hLUwhTQ86XG",
+				0: "AXfvga1nPa1pwWk1kDwURPmQPyrusugf8C",
+				1: "AJjMUNbWUBG2tF54ZFkQxHoXw6cxMSDUZq",
+				2: "AexrxXgbzQ1uySqaepk558qre5oJdEWdXB",
+				3: "Adg6gfxBg7nKQVcZ5usfvK3rfZagDGotzw",
 			},
 		},
 	}
