@@ -8,8 +8,8 @@ package wallet
 import (
 	"errors"
 
-	"github.com/btcsuite/btcwallet/waddrmgr"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/btgsuite/btgd/txscript"
 	btcutil "github.com/btgsuite/btgutil"
 )

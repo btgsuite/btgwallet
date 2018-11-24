@@ -8,7 +8,7 @@ import (
 	"github.com/btgsuite/btgd/blockchain"
 	"github.com/btgsuite/btgd/wire"
 
-	h "github.com/btcsuite/btcwallet/internal/helpers"
+	h "github.com/btgsuite/btgwallet/internal/helpers"
 )
 
 // Worst case script and input/output size estimates.

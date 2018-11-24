@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/btcsuite/btcwallet/internal/zero"
-	"github.com/btcsuite/btcwallet/waddrmgr"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/internal/zero"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/btgsuite/btgd/txscript"
 	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgutil/hdkeychain"

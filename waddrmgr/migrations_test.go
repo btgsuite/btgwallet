@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/btgsuite/btgd/chaincfg"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/walletdb"
 )
 
 // applyMigration is a helper function that allows us to assert the state of the

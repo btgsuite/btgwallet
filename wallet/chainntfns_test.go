@@ -9,8 +9,8 @@ import (
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
 	"github.com/btgsuite/btgd/wire"
-	"github.com/btcsuite/btcwallet/waddrmgr"
-	_ "github.com/btcsuite/btcwallet/walletdb/bdb"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	_ "github.com/btgsuite/btgwallet/walletdb/bdb"
 )
 
 var (

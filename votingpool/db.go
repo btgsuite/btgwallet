@@ -13,8 +13,8 @@ import (
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
 	"github.com/btgsuite/btgutil"
-	"github.com/btcsuite/btcwallet/snacl"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/snacl"
+	"github.com/btgsuite/btgwallet/walletdb"
 )
 
 // These constants define the serialized length for a given encrypted extended

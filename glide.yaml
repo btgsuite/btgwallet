@@ -1,8 +1,8 @@
-package: github.com/btcsuite/btcwallet
+package: github.com/btgsuite/btgwallet
 import:
 - package: github.com/coreos/bbolt
   version: 4f5275f4ebbf6fe7cb772de987fa96ee674460a7
-- package: github.com/btcsuite/btcd
+- package: github.com/btgsuite/btgd
   version: d81d8877b8f327112e94e814937143a71d1692a7
   subpackages:
   - blockchain
@@ -13,7 +13,7 @@ import:
   - txscript
   - wire
 - package: github.com/btcsuite/btclog
-- package: github.com/btcsuite/btcutil
+- package: github.com/btgsuite/btgutil
   version: ab6388e0c60ae4834a1f57511e20c17b5f78be4b
   subpackages:
   - hdkeychain

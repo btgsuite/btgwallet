@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/btgsuite/btgd/btcjson"
-	"github.com/btcsuite/btcwallet/internal/rpchelp"
+	"github.com/btgsuite/btgwallet/internal/rpchelp"
 )
 
 var outputFile = func() *os.File {

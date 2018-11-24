@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/walletdb"
 )
 
 // BlockStamp defines a block (by height and a unique hash) and is used to mark

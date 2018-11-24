@@ -24,7 +24,7 @@ import (
 
 	"golang.org/x/crypto/ripemd160"
 
-	"github.com/btcsuite/btcwallet/internal/legacy/rename"
+	"github.com/btgsuite/btgwallet/internal/legacy/rename"
 	"github.com/btgsuite/btgd/btcec"
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"

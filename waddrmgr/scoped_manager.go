@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/btcsuite/btcwallet/internal/zero"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/internal/zero"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/btgsuite/btgd/btcec"
 	"github.com/btgsuite/btgd/chaincfg"
 	btcutil "github.com/btgsuite/btgutil"

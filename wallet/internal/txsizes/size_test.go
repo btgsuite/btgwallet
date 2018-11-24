@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/btgsuite/btgd/wire"
-	. "github.com/btcsuite/btcwallet/wallet/internal/txsizes"
+	. "github.com/btgsuite/btgwallet/wallet/internal/txsizes"
 )
 
 const (

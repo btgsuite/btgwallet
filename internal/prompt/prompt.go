@@ -13,7 +13,7 @@ import (
 	"strings"
 
 	"github.com/btgsuite/btgutil/hdkeychain"
-	"github.com/btcsuite/btcwallet/internal/legacy/keystore"
+	"github.com/btgsuite/btgwallet/internal/legacy/keystore"
 	"github.com/btcsuite/golangcrypto/ssh/terminal"
 )
 

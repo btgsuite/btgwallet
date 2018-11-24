@@ -7,8 +7,8 @@ package votingpool
 import (
 	"github.com/btgsuite/btgd/wire"
 	"github.com/btgsuite/btgutil/hdkeychain"
-	"github.com/btcsuite/btcwallet/waddrmgr"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/walletdb"
 )
 
 var TstLastErr = lastErr

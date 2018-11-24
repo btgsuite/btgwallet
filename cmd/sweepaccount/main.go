@@ -17,12 +17,11 @@ import (
 	"github.com/btgsuite/btgd/rpcclient"
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
-	"github.com/btgsuite/btgutil"
-	"github.com/btcsuite/btcwallet/internal/cfgutil"
-	"github.com/btcsuite/btcwallet/netparams"
-	"github.com/btcsuite/btcwallet/wallet/txauthor"
-	"github.com/btcsuite/btcwallet/wallet/txrules"
-	"github.com/jessevdk/go-flags"
+	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgwallet/internal/cfgutil"
+	"github.com/btgsuite/btgwallet/netparams"
+	"github.com/btgsuite/btgwallet/wallet/txauthor"
+	"github.com/btgsuite/btgwallet/wallet/txrules"
 )
 
 var (

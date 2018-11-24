@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/btcsuite/btcwallet/snacl"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/snacl"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
 	btcutil "github.com/btgsuite/btgutil"

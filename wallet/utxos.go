@@ -8,7 +8,7 @@ package wallet
 import (
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/walletdb"
 )
 
 // OutputSelectionPolicy describes the rules for selecting an output from the

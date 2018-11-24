@@ -1,7 +1,7 @@
 package chain
 
 import (
-	"github.com/btcsuite/btcwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/waddrmgr"
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"

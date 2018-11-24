@@ -14,10 +14,10 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/btcsuite/btcwallet/chain"
-	"github.com/btcsuite/btcwallet/rpc/legacyrpc"
-	"github.com/btcsuite/btcwallet/wallet"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/chain"
+	"github.com/btgsuite/btgwallet/rpc/legacyrpc"
+	"github.com/btgsuite/btgwallet/wallet"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/lightninglabs/neutrino"
 )
 

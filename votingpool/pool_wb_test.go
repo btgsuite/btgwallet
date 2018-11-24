@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/btgsuite/btgutil/hdkeychain"
-	"github.com/btcsuite/btcwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/waddrmgr"
 )
 
 func TestPoolEnsureUsedAddr(t *testing.T) {

@@ -8,7 +8,7 @@ package wtxmgr
 import (
 	"fmt"
 
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
 	btcutil "github.com/btgsuite/btgutil"
 )
