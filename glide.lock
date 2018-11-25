@@ -1,10 +1,10 @@
-hash: fd238231109616b821cfb40783aab5b96fa5d9026de065411507b5c3431166e5
-updated: 2018-10-16T18:17:51.368476548-07:00
+hash: 417d166d60410039a2b0974fa9102079911e44752a70363e5b2d2c85d3f43e51
+updated: 2018-11-25T13:58:33.270970655+02:00
 imports:
 - name: github.com/aead/siphash
   version: 83563a290f60225eb120d724600b9690c3fb536f
 - name: github.com/btcsuite/btcd
-  version: d81d8877b8f327112e94e814937143a71d1692a7
+  version: 79e00513b1011888b1e675157ab89f527f901cae
   subpackages:
   - addrmgr
   - blockchain
@@ -28,6 +28,15 @@ imports:
   - gcs
   - gcs/builder
   - hdkeychain
+- name: github.com/btcsuite/btcwallet
+  version: 8ae4afc70174bacc745e8dd89fc6db2d817909bd
+  subpackages:
+  - internal/zero
+  - snacl
+  - waddrmgr
+  - wallet/txauthor
+  - walletdb
+  - walletdb/bdb
 - name: github.com/btcsuite/go-socks
   version: 4720035b7bfd2a9bb130b1c184f8bbe41b6f0d0f
   subpackages:
@@ -44,6 +53,25 @@ imports:
   - ssh/terminal
 - name: github.com/btcsuite/websocket
   version: 31079b6807923eb23992c421b114992b95131b55
+- name: github.com/btgsuite/btgd
+  version: 99a73cde359978a5752495a478e20224a18acb05
+  subpackages:
+  - blockchain
+  - btcec
+  - btcjson
+  - chaincfg
+  - chaincfg/chainhash
+  - rpcclient
+  - txscript
+  - wire
+- name: github.com/btgsuite/btgutil
+  version: 526c8484e577a7287517bbd6e774bca220c737de
+  subpackages:
+  - base58
+  - bech32
+  - gcs
+  - gcs/builder
+  - hdkeychain
 - name: github.com/coreos/bbolt
   version: 4f5275f4ebbf6fe7cb772de987fa96ee674460a7
 - name: github.com/davecgh/go-spew
@@ -76,6 +104,40 @@ imports:
   - filterdb
   - headerfs
   - headerlist
+- name: github.com/roasbeef/btcd
+  version: 9978b939c33973be19b932fa7b936079bb7ba38d
+  subpackages:
+  - blockchain
+  - btcec
+  - btcjson
+  - chaincfg
+  - chaincfg/chainhash
+  - database
+  - rpcclient
+  - txscript
+  - wire
+- name: github.com/roasbeef/btcutil
+  version: dfb640c57141f1c2113b92b4b16d2a89c30dd258
+  subpackages:
+  - base58
+  - bech32
+  - bloom
+  - gcs
+  - gcs/builder
+  - hdkeychain
+- name: github.com/roasbeef/btcwallet
+  version: 30affec83c180e98761e0a7113403b6e7179c83b
+  subpackages:
+  - chain
+  - internal/zero
+  - snacl
+  - waddrmgr
+  - walletdb
+  - wtxmgr
+- name: github.com/shelvenzhou/btgd
+  version: 99a73cde359978a5752495a478e20224a18acb05
+  subpackages:
+  - wire
 - name: golang.org/x/crypto
   version: 9419663f5a44be8b34ca85f08abc5fe1be11f8a3
   subpackages:
