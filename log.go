@@ -18,7 +18,7 @@ import (
 	"github.com/btgsuite/btgwallet/wallet"
 	"github.com/btgsuite/btgwallet/wtxmgr"
 	"github.com/jrick/logrotate/rotator"
-	"github.com/lightninglabs/neutrino"
+	"github.com/BTCGPU/neutrino"
 )
 
 // logWriter implements an io.Writer that outputs to both standard output and

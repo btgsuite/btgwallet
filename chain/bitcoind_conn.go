@@ -229,7 +229,7 @@ func (c *BitcoindConn) blockEventHandler(conn *gozmq.Conn) {
 			solutionLength, err := wire.ReadVarInt(reader, 0)
 			if err != nil {
 				log.Error(err)
-				continue mainLoop
+				continue
 			}
 			reader.Seek(int64(solutionLength), io.SeekCurrent)
 

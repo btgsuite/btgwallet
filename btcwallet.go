@@ -18,7 +18,7 @@ import (
 	"github.com/btgsuite/btgwallet/rpc/legacyrpc"
 	"github.com/btgsuite/btgwallet/wallet"
 	"github.com/btgsuite/btgwallet/walletdb"
-	"github.com/lightninglabs/neutrino"
+	"github.com/BTCGPU/neutrino"
 )
 
 var (
