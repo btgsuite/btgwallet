@@ -3,7 +3,6 @@ package chain
 import (
 	"bytes"
 	"fmt"
-	"io"
 	"net"
 	"sync"
 	"sync/atomic"
@@ -203,39 +202,6 @@ func (c *BitcoindConn) blockEventHandler(conn *gozmq.Conn) {
 		eventType := string(msgBytes[0])
 		switch eventType {
 		case "rawblock":
-			// int32_t nVersion;
-			// uint256 hashPrevBlock;
-			// uint256 hashMerkleRoot;
-			// - uint32_t nHeight;
-			// - uint32_t nReserved[7];
-			// uint32_t nTime;
-			// uint32_t nBits;
-			// - uint256 nNonce;
-			// - std::vector<unsigned char> nSolution;
-			reader := bytes.NewReader(msgBytes[1])
-			trimmedBlock := make([]byte, len(msgBytes[1]))
-			// copy Version, PrevBlock, MerkleRoot
-			reader.Read(trimmedBlock[0 : 4+32+32])
-			// skip nHeight, nReserved
-			reader.Seek(32, io.SeekCurrent)
-			// copy Timestamp, Bits
-			reader.Read(trimmedBlock[4+32+32 : 4+32+32+4+4])
-			// copy low 4 bytes of nNonce
-			reader.Read(trimmedBlock[4+32+32+4+4 : 4+32+32+4+4+4])
-			// skip rest 28 bytes of nNonce
-			reader.Seek(28, io.SeekCurrent)
-
-			// skip nSolution
-			solutionLength, err := wire.ReadVarInt(reader, 0)
-			if err != nil {
-				log.Error(err)
-				continue
-			}
-			reader.Seek(int64(solutionLength), io.SeekCurrent)
-
-			// copy Txs
-			reader.Read(trimmedBlock[4+32+32+4+4+4:])
-
 			block := &wire.MsgBlock{}
 			r := bytes.NewReader(msgBytes[1])
 			if err := block.Deserialize(r); err != nil {
