@@ -24,14 +24,14 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/btgsuite/btgd/chaincfg"
+	"github.com/btgsuite/btgd/txscript"
+	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgwallet/votingpool"
 	"github.com/btgsuite/btgwallet/waddrmgr"
 	"github.com/btgsuite/btgwallet/walletdb"
 	_ "github.com/btgsuite/btgwallet/walletdb/bdb"
 	"github.com/btgsuite/btgwallet/wtxmgr"
-	"github.com/btgsuite/btgd/chaincfg"
-	"github.com/btgsuite/btgd/txscript"
-	btcutil "github.com/btgsuite/btgutil"
 )
 
 var (
@@ -143,7 +143,7 @@ func Example_depositAddress() {
 	}
 
 	// Output:
-	// Generated deposit address: 3QTzpc9d3tTbNLJLB7xwt87nWM38boAhAw
+	// Generated deposit address: AeYrYZWoq8oN68otcfxgcP1wqRg7PFpw1e
 }
 
 // This example demonstrates how to empower a series by loading the private
@@ -207,7 +207,7 @@ func Example_startWithdrawal() {
 		}
 		defer mgr.Lock()
 
-		addr, _ := btcutil.DecodeAddress("1MirQ9bwyQcGVJPwKUgapu5ouK2E2Ey4gX", mgr.ChainParams())
+		addr, _ := btcutil.DecodeAddress("GHzooY1p65PaNCmMuaCTeuy627YQCBRZK8", mgr.ChainParams())
 		pkScript, _ := txscript.PayToAddrScript(addr)
 		requests := []votingpool.OutputRequest{
 			{

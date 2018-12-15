@@ -22,6 +22,7 @@ import (
 	"github.com/btgsuite/btgwallet/netparams"
 	"github.com/btgsuite/btgwallet/wallet/txauthor"
 	"github.com/btgsuite/btgwallet/wallet/txrules"
+	flags "github.com/jessevdk/go-flags"
 )
 
 var (

@@ -12,7 +12,7 @@ import (
 
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
-	"github.com/btgsuite/btgutil"
+	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgwallet/snacl"
 	"github.com/btgsuite/btgwallet/walletdb"
 )

@@ -8,9 +8,9 @@ import (
 	"bytes"
 	"testing"
 
-	vp "github.com/btgsuite/btgwallet/votingpool"
 	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgutil/hdkeychain"
+	vp "github.com/btgsuite/btgwallet/votingpool"
 )
 
 func TestStartWithdrawal(t *testing.T) {
@@ -35,8 +35,8 @@ func TestStartWithdrawal(t *testing.T) {
 	vp.TstCreateSeries(t, dbtx, pool, []vp.TstSeriesDef{def})
 	// Create eligible inputs and the list of outputs we need to fulfil.
 	vp.TstCreateSeriesCreditsOnStore(t, dbtx, pool, def.SeriesID, []int64{5e6, 4e6}, store)
-	address1 := "34eVkREKgvvGASZW7hkgE2uNc1yycntMK6"
-	address2 := "3PbExiaztsSYgh6zeMswC49hLUwhTQ86XG"
+	address1 := "AJjMUNbWUBG2tF54ZFkQxHoXw6cxMSDUZq"
+	address2 := "Adg6gfxBg7nKQVcZ5usfvK3rfZagDGotzw"
 	requests := []vp.OutputRequest{
 		vp.TstNewOutputRequest(t, 1, address1, 4e6, mgr.ChainParams()),
 		vp.TstNewOutputRequest(t, 2, address2, 1e6, mgr.ChainParams()),

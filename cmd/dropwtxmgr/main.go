@@ -11,15 +11,16 @@ import (
 	"os"
 	"path/filepath"
 
+	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgwallet/walletdb"
 	_ "github.com/btgsuite/btgwallet/walletdb/bdb"
 	"github.com/btgsuite/btgwallet/wtxmgr"
-	btcutil "github.com/btgsuite/btgutil"
+	flags "github.com/jessevdk/go-flags"
 )
 
 const defaultNet = "mainnet"
 
-var datadir = btcutil.AppDataDir("btcwallet", false)
+var datadir = btcutil.AppDataDir("btgwallet", false)
 
 // Flags.
 var opts = struct {
