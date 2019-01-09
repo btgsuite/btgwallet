@@ -9,7 +9,7 @@ import (
 	"os"
 
 	"github.com/btgsuite/btgwallet/walletdb"
-	"github.com/coreos/bbolt"
+	bbolt "github.com/coreos/bbolt"
 )
 
 // convertErr converts some bolt errors to the equivalent walletdb error.
