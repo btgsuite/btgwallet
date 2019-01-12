@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcwallet/walletdb"
-	"github.com/btcsuite/btcwallet/walletdb/migration"
+	"github.com/btgsuite/btgd/chaincfg"
+	"github.com/btgsuite/btgwallet/walletdb"
+	"github.com/btgsuite/btgwallet/walletdb/migration"
 )
 
 // versions is a list of the different database versions. The last entry should

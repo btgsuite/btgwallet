@@ -14,11 +14,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcutil"
-	"github.com/btcsuite/btcwallet/snacl"
-	"github.com/btcsuite/btcwallet/walletdb"
+	"github.com/btgsuite/btgd/chaincfg"
+	"github.com/btgsuite/btgd/chaincfg/chainhash"
+	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgwallet/snacl"
+	"github.com/btgsuite/btgwallet/walletdb"
 	"github.com/davecgh/go-spew/spew"
 )
 
@@ -731,7 +731,7 @@ func testImportPrivateKey(tc *testContext) bool {
 			name: "wif for uncompressed pubkey address",
 			in:   "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ",
 			expected: expectedAddr{
-				address:     "1GAehh7TsJAHuUAeKZcXf5CnwuGuGgyX2S",
+				address:     "GZ1a7pSQr9maywTwFWGe5qYgs54kKp8CR6",
 				addressHash: hexToBytes("a65d1a239d4ec666643d350c7bb8fc44d2881128"),
 				internal:    false,
 				imported:    true,
@@ -747,7 +747,7 @@ func testImportPrivateKey(tc *testContext) bool {
 			name: "wif for compressed pubkey address",
 			in:   "KwdMAjGmerYanjeui5SHS7JkmpZvVipYvB2LJGU1ZxJwYvP98617",
 			expected: expectedAddr{
-				address:     "1LoVGDgRs9hTfTNJNuXKSpywcbdvwRXpmK",
+				address:     "GdeQgM1Nr1JkjvfbJrBRsbKqXmRn1VGQdX",
 				addressHash: hexToBytes("d9351dcbad5b8f3b8bfa2f2cdc85c28118ca9326"),
 				internal:    false,
 				imported:    true,
@@ -900,7 +900,7 @@ func testImportScript(tc *testContext) bool {
 				"ed9493a9fc20fdb4a714808f0b680f1f1d935277" +
 				"48b5e3f629ffac"),
 			expected: expectedAddr{
-				address:     "3MbyWAu9UaoBewR3cArF1nwf4aQgVwzrA5",
+				address:     "AbgqE8GLFq8xNjvc3iqyk3qpPf3fFmQR2e",
 				addressHash: hexToBytes("da6e6a632d96dc5530d7b3c9f3017725d023093e"),
 				internal:    false,
 				imported:    true,
@@ -921,7 +921,7 @@ func testImportScript(tc *testContext) bool {
 				"6ffefb2238af8627363bdf2ed97c1f89784a1aec" +
 				"db43384f11d2acc64443c7fc299cef0400421a53ae"),
 			expected: expectedAddr{
-				address:     "34CRZpt8j81rgh9QhzuBepqPi4cBQSjhjr",
+				address:     "AJHHHnFKWNMdQVey9YtvP5jZ39FAD6xo5Z",
 				addressHash: hexToBytes("1b800cec1fe92222f36a502c139bed47c5959715"),
 				internal:    false,
 				imported:    true,
