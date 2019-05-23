@@ -21,7 +21,7 @@ import (
 	"github.com/btgsuite/btgwallet/wallet"
 	btcutil "github.com/btgsuite/btgutil"
 	flags "github.com/jessevdk/go-flags"
-	"github.com/BTCGPU/neutrino"
+	// "github.com/BTCGPU/neutrino"
 )
 
 const (
