@@ -16,7 +16,7 @@ import (
 	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgutil/gcs"
 	"github.com/btgsuite/btgutil/gcs/builder"
-	// "github.com/BTCGPU/neutrino"
+	"github.com/BTCGPU/neutrino"
 )
 
 // NeutrinoClient is an implementation of the btcwalet chain.Interface interface.
