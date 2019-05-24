@@ -1,6 +1,7 @@
 package chain_test
 
 import (
+	"encoding/json"
 	"reflect"
 	"testing"
 	"time"
@@ -319,6 +320,7 @@ func assertRelevantTxnsContains(t *testing.T, bf *chain.BlockFilterer, wantTx *w
 		}
 	}
 
-	t.Fatalf("unable to find tx: %x in %d relevant txns", wantTx,
+	tr, _ := json.Marshal(wantTx)
+	t.Fatalf("unable to find tx: %x in %d relevant txns", tr,
 		len(bf.RelevantTxns))
 }
