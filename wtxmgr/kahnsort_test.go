@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/wire"
-	"github.com/btcsuite/btcwallet/wtxmgr"
+	"github.com/btgsuite/btgd/chaincfg/chainhash"
+	"github.com/btgsuite/btgd/wire"
+	"github.com/btgsuite/btgwallet/wtxmgr"
 )
 
 // createTx is a helper method to create random transactions that spend
