@@ -336,7 +336,7 @@ func (c *BitcoindClient) RescanBlocks(
 			continue
 		}
 
-		relevantTxs, err := c.filterBlock(block, header.Height, false)
+		relevantTxs := c.filterBlock(block, header.Height, false)
 		if len(relevantTxs) > 0 {
 			rescannedBlock := btcjson.RescannedBlock{
 				Hash: hash.String(),
@@ -567,14 +567,7 @@ func (c *BitcoindClient) ntfnHandler() {
 			c.bestBlockMtx.Unlock()
 			if newBlock.Header.PrevBlock == bestBlock.Hash {
 				newBlockHeight := bestBlock.Height + 1
-				_, err := c.filterBlock(
-					newBlock, newBlockHeight, true,
-				)
-				if err != nil {
-					log.Errorf("Unable to filter block %v: %v",
-						newBlock.BlockHash(), err)
-					continue
-				}
+				_ = c.filterBlock(newBlock, newBlockHeight, true)
 
 				// With the block succesfully filtered, we'll
 				// make it our new best block.
@@ -745,19 +738,22 @@ func (c *BitcoindClient) onRescanFinished(hash *chainhash.Hash, height int32,
 func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 	reorgBlock *wire.MsgBlock) error {
 
-	log.Debugf("Possible reorg at block %s", reorgBlock.BlockHash())
-
 	// Retrieve the best known height based on the block which caused the
 	// reorg. This way, we can preserve the chain of blocks we need to
 	// retrieve.
 	bestHash := reorgBlock.BlockHash()
 	bestHeight, err := c.GetBlockHeight(&bestHash)
 	if err != nil {
-		return err
+		return fmt.Errorf("unable to get block height for %v: %v",
+			bestHash, err)
 	}
 
+	log.Debugf("Possible reorg at block: height=%v, hash=%s", bestHash,
+		bestHeight)
+
 	if bestHeight < currentBlock.Height {
-		log.Debug("Detected multiple reorgs")
+		log.Debugf("Detected multiple reorgs: best_height=%v below "+
+			"current_height=%v", bestHeight, currentBlock.Height)
 		return nil
 	}
 
@@ -770,7 +766,8 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 	for i := bestHeight - 1; i >= currentBlock.Height; i-- {
 		block, err := c.GetBlock(&previousBlock)
 		if err != nil {
-			return err
+			return fmt.Errorf("unable to get block %v: %v",
+				previousBlock, err)
 		}
 		blocksToNotify.PushFront(block)
 		previousBlock = block.Header.PrevBlock
@@ -783,7 +780,8 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 	// We'll start by retrieving the header to the best block known to us.
 	currentHeader, err := c.GetBlockHeader(&currentBlock.Hash)
 	if err != nil {
-		return err
+		return fmt.Errorf("unable to get block header for %v: %v",
+			currentBlock.Hash, err)
 	}
 
 	// Then, we'll walk backwards in the chain until we find our common
@@ -792,8 +790,8 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 		// Since the previous hashes don't match, the current block has
 		// been reorged out of the chain, so we should send a
 		// BlockDisconnected notification for it.
-		log.Debugf("Disconnecting block %d (%v)", currentBlock.Height,
-			currentBlock.Hash)
+		log.Debugf("Disconnecting block: height=%v, hash=%v",
+			currentBlock.Height, currentBlock.Hash)
 
 		c.onBlockDisconnected(
 			&currentBlock.Hash, currentBlock.Height,
@@ -804,7 +802,8 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 		// continue the common ancestor search.
 		currentHeader, err = c.GetBlockHeader(&currentHeader.PrevBlock)
 		if err != nil {
-			return err
+			return fmt.Errorf("unable to get block header for %v: %v",
+				currentHeader.PrevBlock, err)
 		}
 
 		currentBlock.Height--
@@ -815,7 +814,8 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 		// once we've found our common ancestor.
 		block, err := c.GetBlock(&previousBlock)
 		if err != nil {
-			return err
+			return fmt.Errorf("unable to get block %v: %v",
+				previousBlock, err)
 		}
 		blocksToNotify.PushFront(block)
 		previousBlock = block.Header.PrevBlock
@@ -824,8 +824,8 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 	// Disconnect the last block from the old chain. Since the previous
 	// block remains the same between the old and new chains, the tip will
 	// now be the last common ancestor.
-	log.Debugf("Disconnecting block %d (%v)", currentBlock.Height,
-		currentBlock.Hash)
+	log.Debugf("Disconnecting block: height=%v, hash=%v",
+		currentBlock.Height, currentBlock.Hash)
 
 	c.onBlockDisconnected(
 		&currentBlock.Hash, currentBlock.Height, currentHeader.Timestamp,
@@ -840,13 +840,11 @@ func (c *BitcoindClient) reorg(currentBlock waddrmgr.BlockStamp,
 		nextHash := nextBlock.BlockHash()
 		nextHeader, err := c.GetBlockHeader(&nextHash)
 		if err != nil {
-			return err
+			return fmt.Errorf("unable to get block header for %v: %v",
+				nextHash, err)
 		}
 
-		_, err = c.filterBlock(nextBlock, nextHeight, true)
-		if err != nil {
-			return err
-		}
+		_ = c.filterBlock(nextBlock, nextHeight, true)
 
 		currentBlock.Height = nextHeight
 		currentBlock.Hash = nextHash
@@ -916,8 +914,6 @@ func (c *BitcoindClient) FilterBlocks(
 // the client in the watch list. This is called only within a queue processing
 // loop.
 func (c *BitcoindClient) rescan(start chainhash.Hash) error {
-	log.Infof("Starting rescan from block %s", start)
-
 	// We start by getting the best already processed block. We only use
 	// the height, as the hash can change during a reorganization, which we
 	// catch by testing connectivity from known blocks to the previous
@@ -948,13 +944,6 @@ func (c *BitcoindClient) rescan(start chainhash.Hash) error {
 		return err
 	}
 	headers.PushBack(previousHeader)
-
-	// Queue a RescanFinished notification to the caller with the last block
-	// processed throughout the rescan once done.
-	defer c.onRescanFinished(
-		previousHash, previousHeader.Height,
-		time.Unix(previousHeader.Time, 0),
-	)
 
 	// Cycle through all of the blocks known to bitcoind, being mindful of
 	// reorgs.
@@ -1065,9 +1054,7 @@ func (c *BitcoindClient) rescan(start chainhash.Hash) error {
 		headers.PushBack(previousHeader)
 
 		// Notify the block and any of its relevant transacations.
-		if _, err = c.filterBlock(block, i, true); err != nil {
-			return err
-		}
+		_ = c.filterBlock(block, i, true)
 
 		if i%10000 == 0 {
 			c.onRescanProgress(
@@ -1095,18 +1082,20 @@ func (c *BitcoindClient) rescan(start chainhash.Hash) error {
 		}
 	}
 
+	c.onRescanFinished(bestHash, bestHeight, time.Unix(bestHeader.Time, 0))
+
 	return nil
 }
 
 // filterBlock filters a block for watched outpoints and addresses, and returns
 // any matching transactions, sending notifications along the way.
 func (c *BitcoindClient) filterBlock(block *wire.MsgBlock, height int32,
-	notify bool) ([]*wtxmgr.TxRecord, error) {
+	notify bool) []*wtxmgr.TxRecord {
 
 	// If this block happened before the client's birthday, then we'll skip
 	// it entirely.
 	if block.Header.Timestamp.Before(c.birthday) {
-		return nil, nil
+		return nil
 	}
 
 	if c.shouldNotifyBlocks() {
@@ -1162,7 +1151,7 @@ func (c *BitcoindClient) filterBlock(block *wire.MsgBlock, height int32,
 		c.onBlockConnected(&blockHash, height, block.Header.Timestamp)
 	}
 
-	return relevantTxs, nil
+	return relevantTxs
 }
 
 // filterTx determines whether a transaction is relevant to the client by
@@ -1205,16 +1194,47 @@ func (c *BitcoindClient) filterTx(tx *wire.MsgTx,
 	// to determine if this transaction is somehow relevant to the caller.
 	var isRelevant bool
 
-	// We'll start by cycling through its outputs to determine if it pays to
-	// any of the currently watched addresses. If an output matches, we'll
-	// add it to our watch list.
-	for i, out := range tx.TxOut {
-		_, addrs, _, err := txscript.ExtractPkScriptAddrs(
-			out.PkScript, c.chainParams,
+	// We'll start by checking all inputs and determining whether it spends
+	// an existing outpoint or a pkScript encoded as an address in our watch
+	// list.
+	for _, txIn := range tx.TxIn {
+		// If it matches an outpoint in our watch list, we can exit our
+		// loop early.
+		if _, ok := c.watchedOutPoints[txIn.PreviousOutPoint]; ok {
+			isRelevant = true
+			break
+		}
+
+		// Otherwise, we'll check whether it matches a pkScript in our
+		// watch list encoded as an address. To do so, we'll re-derive
+		// the pkScript of the output the input is attempting to spend.
+		pkScript, err := txscript.ComputePkScript(
+			txIn.SignatureScript, txIn.Witness,
 		)
 		if err != nil {
-			log.Debugf("Unable to parse output script in %s:%d: %v",
-				tx.TxHash(), i, err)
+			// Non-standard outputs can be safely skipped.
+			continue
+		}
+		addr, err := pkScript.Address(c.chainParams)
+		if err != nil {
+			// Non-standard outputs can be safely skipped.
+			continue
+		}
+		if _, ok := c.watchedAddresses[addr.String()]; ok {
+			isRelevant = true
+			break
+		}
+	}
+
+	// We'll also cycle through its outputs to determine if it pays to
+	// any of the currently watched addresses. If an output matches, we'll
+	// add it to our watch list.
+	for i, txOut := range tx.TxOut {
+		_, addrs, _, err := txscript.ExtractPkScriptAddrs(
+			txOut.PkScript, c.chainParams,
+		)
+		if err != nil {
+			// Non-standard outputs can be safely skipped.
 			continue
 		}
 
@@ -1235,17 +1255,6 @@ func (c *BitcoindClient) filterTx(tx *wire.MsgTx,
 	if !isRelevant {
 		if _, ok := c.watchedTxs[tx.TxHash()]; ok {
 			isRelevant = true
-		}
-	}
-
-	// If the transaction didn't pay to any of our watched hashes, we'll
-	// check if it spends any of our watched outpoints.
-	if !isRelevant {
-		for _, in := range tx.TxIn {
-			if _, ok := c.watchedOutPoints[in.PreviousOutPoint]; ok {
-				isRelevant = true
-				break
-			}
 		}
 	}
 
