@@ -7,7 +7,7 @@ require (
 	github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f
 	github.com/btcsuite/golangcrypto v0.0.0-20150304025918-53f62d9b43e8
 	github.com/btcsuite/websocket v0.0.0-20150119174127-31079b680792
-	github.com/btgsuite/btgd v0.0.0-20190506031116-1acdb1161d4c
+	github.com/btgsuite/btgd v0.0.0-20190531030435-40da7cd36fb9
 	github.com/btgsuite/btgutil v0.0.0-20181120193620-526c8484e577
 	github.com/coreos/bbolt v1.3.2
 	github.com/davecgh/go-spew v1.1.1

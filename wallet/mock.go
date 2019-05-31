@@ -3,11 +3,11 @@ package wallet
 import (
 	"time"
 
-	"github.com/btgsuite/btgwallet/chain"
-	"github.com/btgsuite/btgwallet/waddrmgr"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
 	"github.com/btgsuite/btgd/wire"
 	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgwallet/chain"
+	"github.com/btgsuite/btgwallet/waddrmgr"
 )
 
 type mockChainClient struct {

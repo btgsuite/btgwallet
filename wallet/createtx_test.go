@@ -15,7 +15,7 @@ import (
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
-	btcutil "github.com/btgsuite/btgutil/hdkeychain"
+	"github.com/btgsuite/btgutil/hdkeychain"
 	"github.com/btgsuite/btgwallet/waddrmgr"
 	"github.com/btgsuite/btgwallet/walletdb"
 	_ "github.com/btgsuite/btgwallet/walletdb/bdb"
