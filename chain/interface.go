@@ -15,7 +15,7 @@ import (
 func BackEnds() []string {
 	return []string{
 		"bgoldd",
-		"btcd",
+		"btgd",
 		"neutrino",
 	}
 }
