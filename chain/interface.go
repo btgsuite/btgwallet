@@ -3,18 +3,18 @@ package chain
 import (
 	"time"
 
-	"github.com/btgsuite/btgwallet/waddrmgr"
-	"github.com/btgsuite/btgwallet/wtxmgr"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
 	"github.com/btgsuite/btgd/wire"
 	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/wtxmgr"
 )
 
 // BackEnds returns a list of the available back ends.
 // TODO: Refactor each into a driver and use dynamic registration.
 func BackEnds() []string {
 	return []string{
-		"bitcoind",
+		"bgoldd",
 		"btcd",
 		"neutrino",
 	}
