@@ -15,13 +15,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/BTCGPU/neutrino"
+	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgwallet/internal/cfgutil"
 	"github.com/btgsuite/btgwallet/internal/legacy/keystore"
 	"github.com/btgsuite/btgwallet/netparams"
 	"github.com/btgsuite/btgwallet/wallet"
-	btcutil "github.com/btgsuite/btgutil"
 	flags "github.com/jessevdk/go-flags"
-	"github.com/BTCGPU/neutrino"
 )
 
 const (
@@ -37,8 +37,8 @@ const (
 )
 
 var (
-	btcdDefaultCAFile  = filepath.Join(btcutil.AppDataDir("btcd", false), "rpc.cert")
-	defaultAppDataDir  = btcutil.AppDataDir("btcwallet", false)
+	btcdDefaultCAFile  = filepath.Join(btcutil.AppDataDir("btgd", false), "rpc.cert")
+	defaultAppDataDir  = btcutil.AppDataDir("btgwallet", false)
 	defaultConfigFile  = filepath.Join(defaultAppDataDir, defaultConfigFilename)
 	defaultRPCKeyFile  = filepath.Join(defaultAppDataDir, "rpc.key")
 	defaultRPCCertFile = filepath.Join(defaultAppDataDir, "rpc.cert")

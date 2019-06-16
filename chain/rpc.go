@@ -9,8 +9,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/btgsuite/btgwallet/waddrmgr"
-	"github.com/btgsuite/btgwallet/wtxmgr"
 	"github.com/btgsuite/btgd/btcjson"
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgd/chaincfg/chainhash"
@@ -19,6 +17,8 @@ import (
 	btcutil "github.com/btgsuite/btgutil"
 	"github.com/btgsuite/btgutil/gcs"
 	"github.com/btgsuite/btgutil/gcs/builder"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/wtxmgr"
 )
 
 // RPCClient represents a persistent client connection to a bitcoin RPC server
@@ -89,7 +89,7 @@ func NewRPCClient(chainParams *chaincfg.Params, connect, user, pass string, cert
 
 // BackEnd returns the name of the driver.
 func (c *RPCClient) BackEnd() string {
-	return "btcd"
+	return "btgd"
 }
 
 // Start attempts to establish a client connection with the remote server.
