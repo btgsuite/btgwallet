@@ -15,11 +15,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/btgsuite/btgwallet/chain"
-	"github.com/btgsuite/btgwallet/waddrmgr"
-	"github.com/btgsuite/btgwallet/wallet"
-	"github.com/btgsuite/btgwallet/wallet/txrules"
-	"github.com/btgsuite/btgwallet/wtxmgr"
 	"github.com/btgsuite/btgd/btcec"
 	"github.com/btgsuite/btgd/btcjson"
 	"github.com/btgsuite/btgd/chaincfg"
@@ -28,6 +23,11 @@ import (
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
 	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgwallet/chain"
+	"github.com/btgsuite/btgwallet/waddrmgr"
+	"github.com/btgsuite/btgwallet/wallet"
+	"github.com/btgsuite/btgwallet/wallet/txrules"
+	"github.com/btgsuite/btgwallet/wtxmgr"
 )
 
 // confirmed checks whether a transaction at height txHeight has met minconf
@@ -1588,13 +1588,13 @@ func signRawTransaction(icmd interface{}, w *wallet.Wallet, chainClient *chain.R
 	var hashType txscript.SigHashType
 	switch *cmd.Flags {
 	case "ALL":
-		hashType = txscript.SigHashAll
+		hashType = txscript.SigHashAll | txscript.SigHashForkID
 	case "NONE":
 		hashType = txscript.SigHashNone
 	case "SINGLE":
 		hashType = txscript.SigHashSingle
 	case "ALL|ANYONECANPAY":
-		hashType = txscript.SigHashAll | txscript.SigHashAnyOneCanPay
+		hashType = txscript.SigHashAll | txscript.SigHashForkID | txscript.SigHashAnyOneCanPay
 	case "NONE|ANYONECANPAY":
 		hashType = txscript.SigHashNone | txscript.SigHashAnyOneCanPay
 	case "SINGLE|ANYONECANPAY":
