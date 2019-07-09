@@ -1587,12 +1587,16 @@ func signRawTransaction(icmd interface{}, w *wallet.Wallet, chainClient *chain.R
 
 	var hashType txscript.SigHashType
 	switch *cmd.Flags {
+	case "ALL|FORKID":
+		fallthrough
 	case "ALL":
 		hashType = txscript.SigHashAll | txscript.SigHashForkID
 	case "NONE":
 		hashType = txscript.SigHashNone
 	case "SINGLE":
 		hashType = txscript.SigHashSingle
+	case "ALL|FORKID|ANYONECANPAY":
+		fallthrough
 	case "ALL|ANYONECANPAY":
 		hashType = txscript.SigHashAll | txscript.SigHashForkID | txscript.SigHashAnyOneCanPay
 	case "NONE|ANYONECANPAY":
