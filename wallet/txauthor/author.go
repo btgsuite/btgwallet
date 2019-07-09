@@ -8,11 +8,11 @@ package txauthor
 import (
 	"errors"
 
-	"github.com/btgsuite/btgwallet/wallet/txrules"
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgd/txscript"
 	"github.com/btgsuite/btgd/wire"
 	btcutil "github.com/btgsuite/btgutil"
+	"github.com/btgsuite/btgwallet/wallet/txrules"
 
 	h "github.com/btgsuite/btgwallet/internal/helpers"
 	"github.com/btgsuite/btgwallet/wallet/internal/txsizes"
@@ -226,7 +226,7 @@ func AddAllInputScripts(tx *wire.MsgTx, prevPkScripts [][]byte, inputValues []bt
 		default:
 			sigScript := inputs[i].SignatureScript
 			script, err := txscript.SignTxOutput(chainParams, tx, i,
-				pkScript, txscript.SigHashAll, secrets, secrets,
+				pkScript, txscript.SigHashAll|txscript.SigHashForkID, secrets, secrets,
 				sigScript)
 			if err != nil {
 				return err
@@ -280,7 +280,7 @@ func spendWitnessKeyHash(txIn *wire.TxIn, pkScript []byte,
 		return err
 	}
 	witnessScript, err := txscript.WitnessSignature(tx, hashCache, idx,
-		inputValue, witnessProgram, txscript.SigHashAll, privKey, true)
+		inputValue, witnessProgram, txscript.SigHashAll|txscript.SigHashForkID, privKey, true)
 	if err != nil {
 		return err
 	}
@@ -343,7 +343,7 @@ func spendNestedWitnessPubKeyHash(txIn *wire.TxIn, pkScript []byte,
 	// With the sigScript in place, we'll next generate the proper witness
 	// that'll allow us to spend the p2wkh output.
 	witnessScript, err := txscript.WitnessSignature(tx, hashCache, idx,
-		inputValue, witnessProgram, txscript.SigHashAll, privKey, compressed)
+		inputValue, witnessProgram, txscript.SigHashAll|txscript.SigHashForkID, privKey, compressed)
 	if err != nil {
 		return err
 	}
