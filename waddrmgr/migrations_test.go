@@ -10,7 +10,7 @@ import (
 
 	"github.com/btgsuite/btgd/chaincfg"
 	"github.com/btgsuite/btgwallet/walletdb"
-	"github.com/btcsuite/btgd/chaincfg/chainhash"
+	"github.com/btgsuite/btgd/chaincfg/chainhash"
 )
 
 // applyMigration is a helper function that allows us to assert the state of the
