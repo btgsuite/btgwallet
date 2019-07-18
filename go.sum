@@ -5,6 +5,8 @@ github.com/BTCGPU/neutrino v0.0.0-20190603171357-7fa5551147d0 h1:h0fRXinyPf0pVYQ
 github.com/BTCGPU/neutrino v0.0.0-20190603171357-7fa5551147d0/go.mod h1:DohBW23y73Pk4NU5UUMv/vcq4wylOfz5yse2TFEj82s=
 github.com/BTCGPU/neutrino v0.0.0-20190605031018-5127f3c67c98 h1:2zsV0z5DfgPPMlj0CpCRctz5vSRz47K2kcxE3E+QgUs=
 github.com/BTCGPU/neutrino v0.0.0-20190605031018-5127f3c67c98/go.mod h1:7H9aWuL3lzArY9gSWlVdtidd9DB+YxgP+Wza5XIEUH8=
+github.com/BTCGPU/neutrino v0.0.0-20190717211504-43d463d2941f h1:Qra9rX/Ag2IwDdUC0w4qtjZAb6Bxwv6odcFEVPnWdMQ=
+github.com/BTCGPU/neutrino v0.0.0-20190717211504-43d463d2941f/go.mod h1:+VWuaKfczb+eQd99SeKfvfqZ2No4uv2F950LWOrePKo=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/aead/siphash v1.0.1 h1:FwHfE/T45KPKYuuSAKyyvE+oPWcaQ+CUmFW0bPlM+kg=
 github.com/aead/siphash v1.0.1/go.mod h1:Nywa3cDsYNNK3gaciGTWPwHt0wlpNV15vwmswBAUSII=
@@ -36,6 +38,7 @@ github.com/btgsuite/btgwallet v0.0.0-20190523191120-e201b0760337/go.mod h1:aABPm
 github.com/btgsuite/btgwallet v0.0.0-20190524073003-f40d33daab5a/go.mod h1:QbL66i+sq1cs4gUvFCzrgVk7l9t5qaV38G28HC0QVZc=
 github.com/btgsuite/btgwallet v0.0.0-20190531120221-07000f2be656/go.mod h1:L7yvDqkZSUS6BbnU1WBImA3To0+bgkfVIMBuPWeNX4c=
 github.com/btgsuite/btgwallet v0.0.0-20190604153501-b0f13809ea8f/go.mod h1:opEhJjGn+lPXV9Dytptko1EoWk0ZgadvER/iYSWJhig=
+github.com/btgsuite/btgwallet v0.0.0-20190714192543-4113ea97d9e6/go.mod h1:T+pNp26ik9vKXHdxSelPYh9x/+0SEB1heuYIp2UkRvU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/coreos/bbolt v1.3.2 h1:wZwiHHUieZCquLkDL0B8UhzreNWsPHooDAG3q34zk0s=
 github.com/coreos/bbolt v1.3.2/go.mod h1:iRUV2dpdMOn7Bo10OQBFzIJO9kkE559Wcmn+qkEiiKk=
@@ -70,9 +73,11 @@ github.com/lightningnetwork/lnd/queue v1.0.1 h1:jzJKcTy3Nj5lQrooJ3aaw9Lau3I0IwvQ
 github.com/lightningnetwork/lnd/queue v1.0.1/go.mod h1:vaQwexir73flPW43Mrm7JOgJHmcEFBWWSl9HlyASoms=
 github.com/lightningnetwork/lnd/ticker v1.0.0 h1:S1b60TEGoTtCe2A0yeB+ecoj/kkS4qpwh6l+AkQEZwU=
 github.com/lightningnetwork/lnd/ticker v1.0.0/go.mod h1:iaLXJiVgI1sPANIF2qYYUJXjoksPNvGNYowB8aRbpX0=
+github.com/onsi/ginkgo v1.6.0 h1:Ix8l273rp3QzYgXSR+c8d1fTG7UPgYkOSELPhiY/YGw=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
 github.com/onsi/ginkgo v1.7.0 h1:WSHQ+IS43OoUrWtD1/bbclrwK8TTH5hzp+umCiuxHgs=
 github.com/onsi/ginkgo v1.7.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
+github.com/onsi/gomega v1.4.1 h1:PZSj/UFNaVp3KxrzHOcS7oyuWA7LoOY/77yCTEFu21U=
 github.com/onsi/gomega v1.4.1/go.mod h1:C1qb7wdrVGGVU+Z6iS04AVkA3Q65CEZX59MT0QO5uiA=
 github.com/onsi/gomega v1.4.3 h1:RE1xgDvH7imwFD45h+u2SgIfERHlS2yNG4DObb5BSKU=
 github.com/onsi/gomega v1.4.3/go.mod h1:ex+gbHU/CVuBBDIJjb2X0qEXbFg53c61hWP/1CpauHY=
