@@ -2,17 +2,16 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-package txauthor_test
+package txauthor
 
 import (
 	"testing"
 
-	. "github.com/btgsuite/btgwallet/wallet/txauthor"
-	"github.com/btgsuite/btgwallet/wallet/txrules"
 	"github.com/btgsuite/btgd/wire"
 	btcutil "github.com/btgsuite/btgutil"
-
-	"github.com/btgsuite/btgwallet/wallet/internal/txsizes"
+	. "github.com/btgsuite/btgwallet/wallet/txauthor"
+	"github.com/btgsuite/btgwallet/wallet/txrules"
+	"github.com/btgsuite/btgwallet/wallet/txsizes"
 )
 
 func p2pkhOutputs(amounts ...btcutil.Amount) []*wire.TxOut {
