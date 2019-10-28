@@ -14,6 +14,8 @@ github.com/btgsuite/btgd v0.0.0-20191022061529-182f0b5329b7/go.mod h1:MAzWxq4Iua
 github.com/btgsuite/btgutil v0.0.0-20181120193620-526c8484e577/go.mod h1:ypvXVEkIHnbxtQVjlQzSDwpaIaLSDeZK3Cn8oUhocFs=
 github.com/btgsuite/btgutil v0.0.0-20190712111807-e3467bf2e90e h1:Qp0t+vUU/8lzqVE4yLppKhZ0IBAbabMeEyJ9cn9DRew=
 github.com/btgsuite/btgutil v0.0.0-20190712111807-e3467bf2e90e/go.mod h1:6qjaK+WWY+G7pgqIShWjn2G2b2dSgTsN1WePmO4xTt0=
+github.com/btgsuite/btgwallet/walletdb v0.0.0-20191028161901-6272ac6c98d1 h1:SswsvwEjbDRq0etKcaquL15iZDebdstkYikfCiGDOz4=
+github.com/btgsuite/btgwallet/walletdb v0.0.0-20191028161901-6272ac6c98d1/go.mod h1:zpxslVV6dtjZyj4aMZlODqAmoPmT8l9mSOSg34a6KOw=
 github.com/coreos/bbolt v1.3.3 h1:n6AiVyVRKQFNb6mJlwESEvvLoDyiTzXX7ORAUlkeBdY=
 github.com/coreos/bbolt v1.3.3/go.mod h1:iRUV2dpdMOn7Bo10OQBFzIJO9kkE559Wcmn+qkEiiKk=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -41,6 +43,7 @@ golang.org/x/net v0.0.0-20180719180050-a680a1efc54d/go.mod h1:mL1N/T3taQHkDXs73r
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 h1:0GoQqolDA55aaLxZyTzK/Y2ePZzZTUrRacwib7cNsYQ=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.0.0-20190412213103-97732733099d h1:+R4KGOnez64A81RvjARKc4UT5/tI9ujCIVX+P5KiHuI=
 golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20190904154756-749cb33beabd h1:DBH9mDw0zluJT/R+nGuV3jWFWLFaHyYZWD4tOT+cjn0=
 golang.org/x/sys v0.0.0-20190904154756-749cb33beabd/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
