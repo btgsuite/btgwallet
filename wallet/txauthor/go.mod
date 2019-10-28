@@ -1,4 +1,4 @@
-module github.com/btgsuite/btgwallebtgsuite/btgwallet/wallet/txauthor
+module github.com/btgsuite/btgwallet/wallet/txauthor
 
 go 1.12
 
