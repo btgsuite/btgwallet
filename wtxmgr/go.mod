@@ -8,5 +8,3 @@ require (
 	github.com/btgsuite/btgutil v0.0.0-20190712111807-e3467bf2e90e
 	github.com/btgsuite/btgwallet/walletdb v1.0.0
 )
-
-replace github.com/btgsuite/btgwallet/walletdb => ../walletdb
